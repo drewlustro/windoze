@@ -47,8 +47,8 @@ RunOrActivateOrMinimizeProgram(Program, WorkingDir="", WindowSize="")
 }
 
 ; Remap F1-F6 to toggle apps I most care about
-F1::RunOrActivateOrMinimizeProgram(Software . "Google\Chrome\Application\chrome.exe", UserProfile)
-F2::RunOrActivateOrMinimizeProgram(Software . "Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe", UserProfile)
+F1::RunOrActivateOrMinimizeProgram(Software . "Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe", UserProfile)
+F2::RunOrActivateOrMinimizeProgram(Software . "Google\Chrome\Application\chrome.exe", UserProfile)
 F3::RunOrActivateOrMinimizeProgram(DropboxWindows . "Console2\Console.exe", UserProfile)
 F4::RunOrActivateOrMinimizeProgram(Software . "Zeal\zeal.exe", UserProfile)
 F5::RunOrActivateOrMinimizeProgram(Software . "Clover\clover.exe", UserProfile)
