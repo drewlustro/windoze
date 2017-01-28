@@ -1,3 +1,14 @@
+; Windows10.ahk
+
+#InstallKeybdHook
+
+^space::
+  Send, {RWin Down}s{RWin Up}
+Return
+
+
+; AppFKeys.ahk
+
 ; App F-Keys megascript
 ;
 ; Activates/deactivates/launches apps using F1-F6
@@ -48,9 +59,9 @@ RunOrActivateOrMinimizeProgram(Program, WorkingDir="", WindowSize="")
 
 ; Remap F1-F6 to toggle apps I most care about
 ; F1::RunOrActivateOrMinimizeProgram(Software . "Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe", UserProfile)
-F1::RunOrActivateOrMinimizeProgram(DropboxWindows . "Sublime Text\sublime_text.exe", UserProfile)
+F1::RunOrActivateOrMinimizeProgram("Z:\Dropbox\Windows\Sublime Text Build 3083 x64\sublime_text.exe", UserProfile)
 F2::RunOrActivateOrMinimizeProgram(Software . "Google\Chrome\Application\chrome.exe", UserProfile)
-F3::RunOrActivateOrMinimizeProgram(DropboxWindows . "Console2\Console.exe", UserProfile)
+F3::RunOrActivateOrMinimizeProgram("Z:\Dropbox\Windows\Console2\Console.exe", UserProfile)
 F4::RunOrActivateOrMinimizeProgram(Software . "Zeal\zeal.exe", UserProfile)
 ;F5::RunOrActivateOrMinimizeProgram(Software . "Clover\clover.exe", UserProfile)
 ;F1::RunOrActivateOrMinimizeProgram(DropboxWindows . "Sublime Text Build 3083 x64\sublime_text.exe", UserProfile)
@@ -81,3 +92,66 @@ MoveWindow(width, height)
 ;<#2::MoveWindow(1280, 800)
 ;<#3::MoveWindow(1024, 768)
 ;<#4::MoveWindow(800, 600)
+
+
+; HideWindow.ahk
+
+^h::
+    WinMinimize, A ; alias for minimize the active window
+Return
+
+; MinimizeApp.ahk
+
+^m::
+    WinMinimize, A ; minimize the active window
+Return
+
+; QuitApp.ahk
+
+^q::
+    Send !{F4}
+Return
+
+; SplitWindowLeftRight.ahk
+
+#InstallKeybdHook
+
+^!Left::
+    Keywait, RWin
+    Keywait, LWin
+    Send {LWin Up}
+    Send, {RWin Down}{Left}{RWin Up}
+Return
+
+^!Right::
+    Keywait, RWin
+    Keywait, LWin
+    Send {LWin Up}
+    Send, {RWin Down}{Right}{RWin Up}
+Return
+
+; ToggleDesktop.ahk
+
+#InstallKeybdHook
+
+^+d::
+	Keywait, RWin
+	Keywait, LWin
+	Send {LWin Up}
+    Send, {RWin Down}d{RWin Up}
+Return
+
+; VolumeKeys.ahk
+
+; Remap F10-12 to edit volume mute/down/up
+F10::
+Send {Volume_Mute}
+Return
+
+F11::
+Send {Volume_Down 2}
+Return
+
+F12::
+Send {Volume_Up 2}
+Return
